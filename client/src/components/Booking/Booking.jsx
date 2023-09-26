@@ -16,7 +16,6 @@ const Booking = ({ tour, avgRating }) => {
   const { user } = useContext(AuthContext);
   const [minDate, setMinDate] = useState("");
 
-
   const expectedAmount = Number(Tour_price) * Number(amount);
   const serviceFee = 500000
   const totalAmount = Number(expectedAmount) + Number(serviceFee)
@@ -39,6 +38,14 @@ const Booking = ({ tour, avgRating }) => {
     setMinDate(formattedDate);
   }, [tourType]);
 
+  const handleBlur = () => {
+    const enteredDate = new Date(date);
+    if (isNaN(enteredDate)) {
+      alert('Ngày không hợp lệ');
+    } else if (enteredDate < new Date(minDate) || enteredDate > new Date(Date_end)) {
+      alert('Ngày không nằm trong khoảng min và max');
+    }
+  };
 
   const handleClick = async e => {
     e.preventDefault()
@@ -111,7 +118,9 @@ const Booking = ({ tour, avgRating }) => {
           <FormGroup className='d-flex align-items-center gap-3'>
             <input type="date" placeholder='' id='Date' required
               min={minDate}
-              onChange={(e) => setDate(e.target.value)} />
+              max={`${new Date(Date_end).getFullYear()}-${String(new Date(Date_end).getMonth() + 1).padStart(2, "0")}-${String(new Date(Date_end).getDate()).padStart(2, "0")}`}
+              onChange={(e) => setDate(e.target.value)}
+              onBlur={handleBlur} />
             <input type="number" placeholder='Guest' id='amount' min="0" required
               onChange={(e) => setAmount(e.target.value)} />
           </FormGroup>
