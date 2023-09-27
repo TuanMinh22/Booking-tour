@@ -220,7 +220,7 @@ export default function UserPage() {
         </Stack>
 
         <Card>
-          <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
+          <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} searchFor='Tìm kiếm theo firtName hoặc lastName' />
 
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
