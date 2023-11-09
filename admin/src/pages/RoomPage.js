@@ -253,7 +253,7 @@ export default function RoomPage() {
 
                         <TableCell align="left">{Occupany}</TableCell>
 
-                        <TableCell align="left">{roomPrice}</TableCell>
+                        <TableCell align="left">{roomPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</TableCell>
 
                         <TableCell align="right" key={RoomId}>
                           <Link>

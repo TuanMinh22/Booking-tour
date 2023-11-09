@@ -19,7 +19,9 @@ const ChatBox = () => {
 
   useLayoutEffect(() => {
     const chatContainer = chatContainerRef.current;
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    if (chatContainer) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
   }, [messages]);
 
   useEffect(() => {
@@ -71,11 +73,11 @@ const ChatBox = () => {
   };
 
   return (
-    <div className={`chat-container ${isOpen ? 'open' : ''}`} ref={chatContainerRef}>
+    <div className={`chat-container ${isOpen ? 'open' : ''}`}>
       <div className="chat-header" onClick={toggleChat}>
         Hỗ trợ & Tư vấn
       </div>
-      <div className="chat-body">
+      <div className="chat-body" ref={chatContainerRef}>
         {messages.map((message, index) => (
           <div key={index} className="chat-message">
             {

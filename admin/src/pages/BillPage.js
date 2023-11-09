@@ -240,9 +240,9 @@ export default function BillPage() {
 
                         <TableCell align="left">{numPerson}</TableCell>
 
-                        <TableCell align="left">{DateOfBooking}</TableCell>
+                        <TableCell align="left">{`${new Date(DateOfBooking).getDate()}-${new Date(DateOfBooking).getMonth()}-${new Date(DateOfBooking).getFullYear()}`}</TableCell>
 
-                        <TableCell align="left">{amount}</TableCell>
+                        <TableCell align="left">{amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</TableCell>
 
                         <TableCell align="left">{Status === 1 ? 'Đã hủy' : Status === 2 ? 'Chưa thanh toán' : 'Đã thanh toán'}</TableCell>
 

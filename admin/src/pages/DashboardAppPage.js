@@ -168,7 +168,7 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={8}>
             <FormControl sx={{ minWidth: 120 }}>
-              <InputLabel id="chart-interval-label">Thời gian</InputLabel>
+              <InputLabel id="chart-interval-label" sx={{ backgroundColor: 'white', zIndex: 1 }}>Thời gian</InputLabel>
               <Select
                 labelId="chart-interval-label"
                 id="chart-interval-select"
@@ -177,7 +177,7 @@ export default function DashboardAppPage() {
               >
                 <MenuItem value="month">Tháng</MenuItem>
                 <MenuItem value="quarter">Quý</MenuItem>
-                <MenuItem value="year">Năm</MenuItem>
+                {/* <MenuItem value="year">Năm</MenuItem> */}
               </Select>
             </FormControl>
             <AppWebsiteVisits
@@ -197,7 +197,7 @@ export default function DashboardAppPage() {
             />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={4} mt={7}>
             <AppCurrentVisits
               title="Doanh thu"
               chartData={[

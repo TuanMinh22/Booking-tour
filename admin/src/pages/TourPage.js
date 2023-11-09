@@ -253,7 +253,7 @@ export default function TourPage() {
 
                         <TableCell align="left">{Occupany}</TableCell>
 
-                        <TableCell align="left">{tourPrice}</TableCell>
+                        <TableCell align="left">{tourPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</TableCell>
 
                         <TableCell align="right" key={TourId}>
                           <Link to={`/dashboard/tour/${row.Tour_ID}`}>
