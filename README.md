@@ -17,15 +17,15 @@ $ cd admin
 $ npm install
 
 # client
-$ cd admin
+$ cd client
 $ npm install
 
 $ api
-$ cd admin
+$ cd api
 $ npm install
 
 $ socket
-$ cd admin
+$ cd socket
 $ npm install
 ```
 
@@ -37,15 +37,15 @@ $ cd admin
 $ npm start
 
 # client
-$ cd admin
+$ cd client
 $ npm start
 
 $ api
-$ cd admin
+$ cd api
 $ npm start
 
 $ socket
-$ cd admin
+$ cd socket
 $ npm start
 ```
 
